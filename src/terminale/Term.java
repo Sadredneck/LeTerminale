@@ -5,8 +5,6 @@ import java.io.IOException;
 import java.io.InputStreamReader;
 import java.util.Arrays;
 
-import static terminale.Commands.ALLFILES;
-import static terminale.Commands.COPY;
 
 public class Term {
     private static Commandable commandable;

@@ -5,6 +5,7 @@ import java.nio.file.Path;
 import java.nio.file.attribute.BasicFileAttributes;
 import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.Comparator;
 import java.util.List;
 
 public class AllFiles implements Commandable {
@@ -24,7 +25,11 @@ public class AllFiles implements Commandable {
         ArrayList<File> files = new ArrayList<>(Arrays.asList(filestemp));
         ArrayList<BasicFileAttributes> attr = new ArrayList<>();
         if (params.contains("-time")) {
-
+            files.sort();
         }
+    }
+
+    public static Comparator<File>  {
+
     }
 }
