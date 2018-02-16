@@ -7,5 +7,6 @@ public enum Commands {
     COPY,
     RENAME,
     HELP,
+    MAKEZIP,
     EXIT
 }

@@ -5,7 +5,6 @@ import java.io.IOException;
 import java.io.InputStreamReader;
 import java.util.Arrays;
 
-
 public class Term {
     private static Commandable commandable;
 
@@ -28,6 +27,8 @@ public class Term {
             case HELP:
                 break;
             case RENAME:
+                break;
+            case MAKEZIP:
                 break;
             case GETLOCATION:
                 commandable = new GetLocation(Arrays.copyOfRange(elems, 1, elems.length));
