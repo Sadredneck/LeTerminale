@@ -6,20 +6,27 @@ import java.io.InputStreamReader;
 
 public class Term {
     private static void handleInput(String input) throws IllegalArgumentException {
+        if (input == null || input.isEmpty())
+            return;
         String[] elems = input.split("\\s+");
-
         if (elems.length == 0)
             return;
 
         switch (Commands.valueOf(elems[0].toUpperCase())) {
             case ALLFILES:
+                break;
             case COPY:
+                break;
             case EXIT:
                 throw new Error();
             case HELP:
+                break;
             case RENAME:
+                break;
             case GETLOCATION:
+                break;
             case CHANGELOCATION:
+                break;
         }
     }
 
@@ -28,9 +35,8 @@ public class Term {
         System.out.println("Welcome to Terminalus!");
         while (true) {
             System.out.print("Enter your command: ");
-            String line = "";
             try {
-                line = inputLine.readLine();
+                String line = inputLine.readLine();
                 handleInput(line);
             } catch (IOException e) {
                 System.out.println("Bizzare input.");
