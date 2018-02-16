@@ -7,6 +7,10 @@ public class ChangeLocation implements Commandable {
     private static Path toLocation;
     private static Path currentLocation;
 
+    static {
+        currentLocation = Paths.get("").toAbsolutePath();
+    }
+
     public ChangeLocation() {
         System.out.println("Print the location to change");
     }
