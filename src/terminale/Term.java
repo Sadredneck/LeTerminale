@@ -1,7 +1,11 @@
 package terminale;
 
-/**
- * Created by 1 on 16.02.2018.
- */
+import java.awt.datatransfer.StringSelection;
+import java.io.BufferedReader;
+import java.io.InputStreamReader;
+
 public class Term {
+    public static void main(String[] args) {
+
+    }
 }
