@@ -1,14 +1,11 @@
 package terminale;
 
 public enum Commands {
-    ALLFILES {
-        public void doWar() {
-            System.out.println("Babah");
-        }
-    },
-    BBBB {};
-
-    public void doWar() {
-        System.out.println("allah");
-    }
+    ALLFILES,
+    CHANGELOCATION,
+    GETLOCATION,
+    COPY,
+    RENAME,
+    HELP,
+    EXIT
 }
