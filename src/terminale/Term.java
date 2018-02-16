@@ -30,10 +30,12 @@ public class Term {
             case RENAME:
                 break;
             case GETLOCATION:
-                commandable = new GetLocation();
+                commandable = new GetLocation(Arrays.copyOfRange(elems, 1, elems.length));
                 commandable.doCommand();
                 break;
             case CHANGELOCATION:
+                commandable = new ChangeLocation(Arrays.copyOfRange(elems, 1, elems.length));
+                commandable.doCommand();
                 break;
         }
     }
