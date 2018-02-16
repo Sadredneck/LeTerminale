@@ -1,16 +1,14 @@
 package terminale;
 
-import java.nio.file.Path;
 
 public class GetLocation implements Commandable {
-    private Path location;
-
-    public void setLocation(Path location) {
-        this.location = location;
-    }
 
     @Override
     public void doCommand() {
-        System.out.println(location);
+        System.out.println(ChangeLocation.getCurrentLocation());
+    }
+
+    public GetLocation(String... params) {
+        System.out.println("This command doesn't need any params");
     }
 }
