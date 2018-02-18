@@ -12,6 +12,8 @@ public class AllFiles implements Commandable {
     private List<String> params;
 
     public AllFiles(String...  params) {
+        if (params.length>2)
+            System.out.println("Too many parameters. The max is 1");
         this.params = Arrays.asList(params);
     }
 
