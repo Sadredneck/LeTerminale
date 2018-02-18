@@ -16,6 +16,8 @@ public class Help implements Commandable{
     }
 
     public Help (String... args){
+        if (args.length>0)
+            System.out.println("'Help' doesn't need any parameters");
 
     }
 
