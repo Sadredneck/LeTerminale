@@ -1,6 +1,9 @@
 package terminale;
 
 import java.io.File;
+import java.io.IOException;
+import java.nio.file.CopyOption;
+import java.nio.file.Files;
 import java.nio.file.Path;
 import java.nio.file.Paths;
 import java.util.Arrays;
@@ -37,7 +40,14 @@ public class Rename implements Commandable {
             to = Paths.get(ChangeLocation.getCurrentLocation().toString(),
                     to.toString());
         }
-        rename(from.toString(), to.toString());
+        try {
+            Files.move(from, to);
+        }
+        catch (IOException exc){
+            System.out.println("Can't rename file.");
+            return;
+        }
+        System.out.println("Rename successful.");
     }
 
     private void rename(String oldName, String newName) {
