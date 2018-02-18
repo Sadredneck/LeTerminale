@@ -42,8 +42,7 @@ public class Rename implements Commandable {
         }
         try {
             Files.move(from, to);
-        }
-        catch (IOException exc){
+        } catch (IOException exc) {
             System.out.println("Can't rename file.");
             return;
         }
@@ -58,7 +57,7 @@ public class Rename implements Commandable {
             System.out.println("File with new name already exist.");
             return;
         }
-        if (!oldFile.renameTo(newFile)){
+        if (!oldFile.renameTo(newFile)) {
             System.out.println("Can't rename.");
         }
     }

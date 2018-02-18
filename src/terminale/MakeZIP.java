@@ -1,9 +1,6 @@
 package terminale;
 
-import java.io.File;
-import java.io.FileInputStream;
-import java.io.FileOutputStream;
-import java.io.IOException;
+import java.io.*;
 import java.nio.file.Files;
 import java.nio.file.Path;
 import java.nio.file.Paths;
@@ -28,30 +25,48 @@ public class MakeZIP implements Commandable {
 
     @Override
     public void doCommand() {
+        if (params.size() != 1) {
+            System.out.println("You need only one parameter");
+            return;
+        }
         Path source = Paths.get(params.get(0));
         File file;
         if (source.isAbsolute())
             file = source.toFile();
         else
             file = Paths.get(ChangeLocation.getCurrentLocation().toString(), source.toString()).toFile();
-        if (!file.exists()){
+        if (!file.exists()) {
             System.out.println("File doesn't exist.");
             return;
         }
-       try {
-            File f = new File(file.getName() + ".zip");
-            ZipOutputStream out = new ZipOutputStream(new FileOutputStream(f));
-            ZipEntry e = new ZipEntry(file.getName());
-            out.putNextEntry(e);
-
-            byte[] data = file.toString().getBytes();
-            out.write(data, 0, data.length);
-            out.closeEntry();
-
+        try {
+            FileOutputStream f = new FileOutputStream(file.getName() + ".zip");
+            ZipOutputStream out = new ZipOutputStream(f);
+            doZip(file, "", out);
             out.close();
-        }
-        catch (IOException exc){
+        } catch (IOException exc) {
             System.out.println("Can't create zip");
         }
+    }
+
+    private void doZip(File file, String fileName, ZipOutputStream out) throws IOException {
+        if (file.isHidden()) {
+            return;
+        }
+        if (file.isDirectory()) {
+            for (File innerFile : file.listFiles()) {
+                doZip(innerFile, fileName + "/" + innerFile.getName(), out);
+            }
+            return;
+        }
+        FileInputStream fis = new FileInputStream(file);
+        ZipEntry zipEntry = new ZipEntry(fileName);
+        out.putNextEntry(zipEntry);
+        byte[] bytes = new byte[1024];
+        int length;
+        while ((length = fis.read(bytes)) >= 0) {
+            out.write(bytes, 0, length);
+        }
+        fis.close();
     }
 }

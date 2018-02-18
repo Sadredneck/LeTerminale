@@ -9,7 +9,7 @@ public class GetLocation implements Commandable {
     }
 
     public GetLocation(String... params) {
-        if (params.length>0)
+        if (params.length > 0)
             System.out.println("This command doesn't need any params");
     }
 }

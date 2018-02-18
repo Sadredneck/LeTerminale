@@ -7,7 +7,7 @@ import java.nio.file.Paths;
 import java.util.Arrays;
 import java.util.List;
 
-public class Copy implements Commandable{
+public class Copy implements Commandable {
     private List<String> params;
 
     @Override
@@ -34,7 +34,7 @@ public class Copy implements Commandable{
     public Copy() {
     }
 
-    public Copy(String...  params) {
+    public Copy(String... params) {
         this.params = Arrays.asList(params);
     }
 }

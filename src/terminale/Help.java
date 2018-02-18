@@ -1,6 +1,6 @@
 package terminale;
 
-public class Help implements Commandable{
+public class Help implements Commandable {
 
     private String help = "Command: {ALLFILES} + Parameters: {{-name}, {-time}, none}\n" +
             "Command: {CHANGELOCATION} + Parameters: {absolute or relative path}\n" +
@@ -11,12 +11,12 @@ public class Help implements Commandable{
             "Command: {MAKEZIP} + Parameters: {{absolute or relative path}, {absolute or relative path}}\n" +
             "Command: {EXIT} + Parameters: none";
 
-    public Help(){
+    public Help() {
 
     }
 
-    public Help (String... args){
-        if (args.length>0)
+    public Help(String... args) {
+        if (args.length > 0)
             System.out.println("'Help' doesn't need any parameters");
 
     }
