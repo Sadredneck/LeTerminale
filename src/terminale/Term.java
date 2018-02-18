@@ -21,6 +21,7 @@ public class Term {
                 commandable.doCommand();
                 break;
             case COPY:
+                commandable = new Copy(Arrays.copyOfRange(elems, 1, elems.length));
                 commandable.doCommand();
                 break;
             case EXIT:
