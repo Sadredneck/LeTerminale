@@ -21,14 +21,19 @@ public class Term {
                 commandable.doCommand();
                 break;
             case COPY:
+                commandable.doCommand();
                 break;
             case EXIT:
                 throw new Exit();
             case HELP:
+                commandable.doCommand();
                 break;
             case RENAME:
+                commandable.doCommand();
                 break;
             case MAKEZIP:
+                commandable = new MakeZIP(Arrays.copyOfRange(elems, 1, elems.length));
+                commandable.doCommand();
                 break;
             case GETLOCATION:
                 commandable = new GetLocation(Arrays.copyOfRange(elems, 1, elems.length));
@@ -59,5 +64,6 @@ public class Term {
         }
     }
 
-    static class Exit extends Error {}
+    static class Exit extends Error {
+    }
 }
