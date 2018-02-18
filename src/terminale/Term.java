@@ -26,9 +26,11 @@ public class Term {
             case EXIT:
                 throw new Exit();
             case HELP:
+                commandable = new Help(Arrays.copyOfRange(elems, 1, elems.length));
                 commandable.doCommand();
                 break;
             case RENAME:
+                commandable = new Rename(Arrays.copyOfRange(elems, 1, elems.length));
                 commandable.doCommand();
                 break;
             case MAKEZIP:
@@ -64,6 +66,6 @@ public class Term {
         }
     }
 
-    static class Exit extends Error {
+    static private class Exit extends Error {
     }
 }

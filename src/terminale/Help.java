@@ -6,7 +6,7 @@ public class Help implements Commandable{
             "Command: {CHANGELOCATION} + Parameters: {absolute or relative path}\n" +
             "Command: {GETLOCATION} + Parameters: none\n" +
             "Command: {COPY} + Parameters: {{absolute or relative path}, {absolute or relative path}}\n" +
-            "Command: {RENAME} + Parameters: {absolute or relative path}\n" +
+            "Command: {RENAME} + Parameters: {{absolute or relative path}, {absolute or relative path}}\n" +
             "Command: {HELP} + Parameters: none\n" +
             "Command: {MAKEZIP} + Parameters: {{absolute or relative path}, {absolute or relative path}}\n" +
             "Command: {EXIT} + Parameters: none";
