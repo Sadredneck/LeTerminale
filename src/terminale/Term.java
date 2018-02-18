@@ -67,6 +67,6 @@ public class Term {
         }
     }
 
-    static class Exit extends Error {
+    static private class Exit extends Error {
     }
 }
