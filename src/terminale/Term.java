@@ -23,7 +23,7 @@ public class Term {
             case COPY:
                 break;
             case EXIT:
-                throw new Error();
+                throw new Exit();
             case HELP:
                 break;
             case RENAME:
@@ -53,9 +53,11 @@ public class Term {
                 System.out.println("Bizzare input.");
             } catch (IllegalArgumentException exc) {
                 System.out.println("wrong command");
-            } catch (Error error) {
+            } catch (Exit error) {
                 System.exit(0);
             }
         }
     }
+
+    static class Exit extends Error {}
 }
